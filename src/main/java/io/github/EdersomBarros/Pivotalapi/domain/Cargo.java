@@ -1,6 +1,6 @@
 package io.github.EdersomBarros.Pivotalapi.domain;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

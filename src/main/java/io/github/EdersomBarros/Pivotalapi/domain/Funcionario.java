@@ -1,17 +1,17 @@
 package io.github.EdersomBarros.Pivotalapi.domain;
 
 
-import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import javax.persistence.*;
+
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
-@Getter@Setter
-@NoArgsConstructor
+@Getter
+@Setter
+@AllArgsConstructor
 @Table(name = "FUNCIONARIOS")
 public class Funcionario extends  AbstractEntity<Long>{
 
