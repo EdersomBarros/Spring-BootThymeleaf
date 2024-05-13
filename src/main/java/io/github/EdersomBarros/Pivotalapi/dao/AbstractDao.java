@@ -3,9 +3,7 @@ import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.TypedQuery;
+import javax.persistence.*;
 
 public abstract class AbstractDao<T, PK extends Serializable> {
 
