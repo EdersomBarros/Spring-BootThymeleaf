@@ -4,6 +4,7 @@ package io.github.EdersomBarros.Pivotalapi.dao;
 
 import io.github.EdersomBarros.Pivotalapi.domain.Funcionario;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface FuncionarioDao {
@@ -17,4 +18,14 @@ public interface FuncionarioDao {
     Funcionario findById(Long id);
 
     List<Funcionario> findAll();
+
+    List<Funcionario> findByBome(String nome);
+
+    List<Funcionario> findByCargoId(Long id);
+
+    List<Funcionario> findByDataEntradaDataSaida(LocalDate entrada, LocalDate saida);
+
+    List<Funcionario> findByDataEntrada(LocalDate entrada);
+
+    List<Funcionario> findByDataSaida(LocalDate saida);
 }
