@@ -21,6 +21,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Table(name = "FUNCIONARIOS")
 public class Funcionario extends  AbstractEntity<Long>{
+
     @NotBlank
     @Size(max = 255, min = 3)
     @Column(nullable = false, unique = true)
@@ -37,6 +38,8 @@ public class Funcionario extends  AbstractEntity<Long>{
     @Column(name = "data_entrada", nullable = false, columnDefinition = "DATE")
     private LocalDate dataEntrada;
 
+    @NotNull
+    @PastOrPresent(message = "{PastOrPresent.funcionario.dataEntrada}")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @Column(name = "data_saida", columnDefinition = "DATE")
     private LocalDate dataSaida;

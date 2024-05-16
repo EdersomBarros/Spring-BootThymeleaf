@@ -7,8 +7,10 @@ import org.springframework.validation.Validator;
 import java.time.LocalDate;
 
 public class FuncionarioValidator implements Validator {
+
     @Override
     public boolean supports(Class<?> clazz) {
+
         return Funcionario.class.equals(clazz);
     }
 
