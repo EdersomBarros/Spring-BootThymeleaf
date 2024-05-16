@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @AllArgsConstructor
-@NoArgsConstructor
 public enum UF {
     AC("AC", "Acre"),
     AL("AL", "Alagoas"),
