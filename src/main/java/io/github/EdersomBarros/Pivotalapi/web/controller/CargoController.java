@@ -25,7 +25,6 @@ public class CargoController {
 
     @GetMapping("/cadastrar")
     public String cadastrar(Cargo cargo) {
-
         return "/cargo/cadastro";
     }
 
@@ -49,6 +48,7 @@ public class CargoController {
 
     @ModelAttribute("departamentos")
     public List<Departamento> listaDeDepartamentos() {
+
         return departamentoService.buscarTodos();
     }
 
@@ -59,7 +59,10 @@ public class CargoController {
     }
 
     @PostMapping("/editar")
-    public String editar(Cargo cargo, RedirectAttributes attr) {
+    public String editar(@Valid Cargo cargo, BindingResult result, RedirectAttributes attr) {
+        if (result.hasErrors()) {
+            return "/cargo/cadastro";
+        }
         cargoService.editar(cargo);
         attr.addFlashAttribute("success", "Cargo editado com sucesso.");
         return "redirect:/cargos/cadastrar";

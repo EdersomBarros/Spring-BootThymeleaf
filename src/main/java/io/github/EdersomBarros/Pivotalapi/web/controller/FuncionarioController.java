@@ -30,11 +30,13 @@ public class FuncionarioController {
 
     @InitBinder
     public void initBinder(WebDataBinder binder){
+
         binder.addValidators(new FuncionarioValidator());
     }
 
     @GetMapping("/cadastrar")
     public String cadastrar(Funcionario funcionario) {
+
         return "/funcionario/cadastro";
     }
 
@@ -50,7 +52,6 @@ public class FuncionarioController {
         if(result.hasErrors()){
             return "/funcionario/cadastro";
         }
-
         funcionarioService.salvar(funcionario);
         attr.addFlashAttribute("success", "Funcionário cadastrado com sucesso.");
         return "redirect:/funcionarios/cadastrar";
@@ -102,15 +103,15 @@ public class FuncionarioController {
     }
 
 
-
-
     @ModelAttribute("cargos")
     public List<Cargo> getCargos() {
+
         return cargoService.buscarTodos();
     }
 
     @ModelAttribute("ufs")
     public UF[] getUFs() {
+
         return UF.values();
     }
 

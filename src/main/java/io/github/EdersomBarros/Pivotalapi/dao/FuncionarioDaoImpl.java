@@ -11,10 +11,9 @@ import java.util.List;
 public class FuncionarioDaoImpl extends AbstractDao<Funcionario, Long> implements FuncionarioDao {
 
     @Override
-    public List<Funcionario> findByBome(String nome) {
+    public List<Funcionario> findByNome(String nome) {
+        return createQuery("select f from Funcionario f where f.nome like concat('%',?1,'%') ", nome);
 
-
-        return createQuery("select f from Funcionario f where f.nome like concat('%',?1,'%')", nome);
     }
 
     @Override
@@ -51,4 +50,6 @@ public class FuncionarioDaoImpl extends AbstractDao<Funcionario, Long> implement
         return createQuery(jpql, saida);
 
     }
+
+
 }

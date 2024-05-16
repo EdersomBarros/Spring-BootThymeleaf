@@ -19,7 +19,7 @@ public interface FuncionarioDao {
 
     List<Funcionario> findAll();
 
-    List<Funcionario> findByBome(String nome);
+    List<Funcionario> findByNome(String nome);
 
     List<Funcionario> findByCargoId(Long id);
 
@@ -28,4 +28,6 @@ public interface FuncionarioDao {
     List<Funcionario> findByDataEntrada(LocalDate entrada);
 
     List<Funcionario> findByDataSaida(LocalDate saida);
+
+
 }
